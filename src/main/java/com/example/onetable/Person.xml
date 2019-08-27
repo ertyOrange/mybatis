@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.example.onetable.IPerson">
+
+	<insert id="insertPerson" parameterType="Person">
+		INSERT INTO Person(name,
+		dept, website,phone)
+		VALUES(#{name}, #{dept}, #{website}, #{phone})
+	</insert>
+
+	<select id="getPersonList" resultType="com.example.onetable.Person" >
+		SELECT * FROM Person
+	</select>
+
+	<update id="updatePerson" parameterType="Person">
+		UPDATE Person
+		SET
+		name=
+		#{name},
+		dept = #{dept},
+		website = #{website},
+		phone = #{phone}
+		WHERE
+		id =
+		#{id}
+	</update>
+
+	<delete id="deletePerson" parameterType="int">
+		DELETE FROM Person WHERE id = #{id}
+	</delete>
+	<select id="getPerson" resultType="com.example.onetable.Person" >
+		SELECT * FROM Person WHERE id = #{id}
+	</select>
+</mapper>
+

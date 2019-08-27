@@ -5,7 +5,7 @@
  * @author yy263
  *
  */
-package com.example.demo.models;
+package com.example.onetable;
 
 public class Person {
 	private int id;
